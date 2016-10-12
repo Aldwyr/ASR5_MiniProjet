@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
+
 #include "creatConnexion.h"
-#include "socklib.h"
+#include "../commun/socklib.h"
 
 #define VERSION_LOGICIEL 1
 #define SEND_RAPPORT 001

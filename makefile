@@ -1,6 +1,6 @@
 export CC=gcc
 export CFLAGS=-W -Wall -ansi -pedantic -std=c11
-export LDFLAGS=
+export LDFLAGS= ../../lib/libsock.a
 
 
 CLIENT_DIR=src/client
