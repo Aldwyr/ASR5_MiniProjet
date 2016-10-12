@@ -40,10 +40,12 @@ void (* menuChosen())(){
             case 1:
                 return sendRapport;
                 break;
-                
             case 2:
                 return receiveRapport;
-                
+                break;
+            case 3:
+                printf("fermuture du programme.\nMerci est bonne journée.\n");
+                break;
             default:
                 value = 0;
                 printf("Erreur lors du choix. merci de choisir une valeur dans les choix proposé.\n");
