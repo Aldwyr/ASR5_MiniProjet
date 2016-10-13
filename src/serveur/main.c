@@ -3,6 +3,12 @@
 #include "../commun/socklib.h"
 
 
+void echange(const int sClient) {
+    char *messageReceived = NULL;
+    messageReceived = RecoieLigne(sClient);
+    printf("%s\n", messageReceived);
+}
+
 void waitConnexion(int s) {
     int list_error = 0;
     int socketAccepted = 0;
@@ -14,7 +20,8 @@ void waitConnexion(int s) {
         exit(EXIT_FAILURE);
     }
     socketAccepted = AcceptConnexion(s);
-    printf("j'ai reçu une demande de connexion");
+    printf("Connexion accepted\n");
+    echange(socketAccepted);
 }
 
 void creationSocket() {

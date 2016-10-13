@@ -10,11 +10,15 @@
 
 
 void sendRapport(){
-    int socket;
+    int socketServeur;
     char *host = "localhost";
     char *port = "8080";
     printf("je suis la fonction pour envoyer un rapport.\n");
-    socket = CreeSocketClient(host, port);
+
+
+    socketServeur = CreeSocketClient(host, port);
+    // Si on arrive la, c'est que le client est connecté au serveur. On peut donc commencer à envoyer des données.
+    EnvoieMessage(socketServeur, "Ceci est un test : %d", 42);
 
 }
 
