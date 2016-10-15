@@ -21,6 +21,19 @@
 
 #define INVALID_SOCKET -1
 #define SOCKET_ERROR -1
+/**
+ * @file socklib.h
+ *
+ * @author Rico Fabien <fabien.rico@univ-lyon1.fr>
+ *
+ * @brief Contient les prototypes des fonctioncs de socklib.c
+ */
+
+/**
+ * @defgroup sockLib LibSock
+ * @brief Les fonctions utiles pour la communications entre le client et le serveurs.
+ *  @{
+ */
 
 /**
  * @brief Cree une socket d'attente pour le serveur sur le port port
@@ -72,3 +85,4 @@ int EnvoieMessage(int s, char *format, ...);
  *         * 1 s'il y a qqchose � lire
  */
 int TestLecture(int s);
+/** }@*/

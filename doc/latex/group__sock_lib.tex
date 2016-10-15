@@ -1,0 +1,141 @@
+\hypertarget{group__sock_lib}{}\section{Lib\+Sock}
+\label{group__sock_lib}\index{Lib\+Sock@{Lib\+Sock}}
+
+
+Les fonctions utiles pour la communications entre le client et le serveurs.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__sock_lib_ga8121aa8dd7fe1c345cd6addefa40281d}{Cree\+Socket\+Serveur} (const char $\ast$port)
+\begin{DoxyCompactList}\small\item\em Cree une socket d\textquotesingle{}attente pour le serveur sur le port port. \end{DoxyCompactList}\item 
+\hypertarget{group__sock_lib_ga2b1f3d897fd30b2f0df7fe2bd76509d9}{}int {\bfseries Cree\+Socket\+Client} (const char $\ast$serveur, const char $\ast$port)\label{group__sock_lib_ga2b1f3d897fd30b2f0df7fe2bd76509d9}
+
+\item 
+\hypertarget{group__sock_lib_gad4c89061f7a106e203d519efa2ca869a}{}int \hyperlink{group__sock_lib_gad4c89061f7a106e203d519efa2ca869a}{Accept\+Connexion} (int s)\label{group__sock_lib_gad4c89061f7a106e203d519efa2ca869a}
+
+\begin{DoxyCompactList}\small\item\em retourne la socket accept�e \end{DoxyCompactList}\item 
+int \hyperlink{group__sock_lib_ga86f7976d4005ff8c38a9f8f19d43d070}{Recoie\+Et\+Sauve\+Donnees} (int fd, int sock)
+\item 
+char $\ast$ \hyperlink{group__sock_lib_ga954224eeb3b54e20383d3ccdf4de5db3}{Recoie\+Ligne} (int sock)
+\item 
+int \hyperlink{group__sock_lib_ga443d2ded4b69530a3f4648e6e8b903e1}{Envoie\+Message} (int s, char $\ast$format,...)
+\item 
+int \hyperlink{group__sock_lib_ga04edb3bc7a730e2fe5a9560e9aa130f4}{Test\+Lecture} (int s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Les fonctions utiles pour la communications entre le client et le serveurs. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__sock_lib_ga8121aa8dd7fe1c345cd6addefa40281d}{}\index{Lib\+Sock@{Lib\+Sock}!Cree\+Socket\+Serveur@{Cree\+Socket\+Serveur}}
+\index{Cree\+Socket\+Serveur@{Cree\+Socket\+Serveur}!Lib\+Sock@{Lib\+Sock}}
+\subsubsection[{Cree\+Socket\+Serveur(const char $\ast$port)}]{\setlength{\rightskip}{0pt plus 5cm}int Cree\+Socket\+Serveur (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{port}
+\end{DoxyParamCaption}
+)}\label{group__sock_lib_ga8121aa8dd7fe1c345cd6addefa40281d}
+
+
+Cree une socket d\textquotesingle{}attente pour le serveur sur le port port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & \+: le port utilisé \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la socket d\textquotesingle{}attente ou -\/1 en cas d\textquotesingle{}erreur
+\end{DoxyReturn}
+en cas d\textquotesingle{}erreur, un message explicatif est affich� sur la sortie d\textquotesingle{}erreur standart \hypertarget{group__sock_lib_ga443d2ded4b69530a3f4648e6e8b903e1}{}\index{Lib\+Sock@{Lib\+Sock}!Envoie\+Message@{Envoie\+Message}}
+\index{Envoie\+Message@{Envoie\+Message}!Lib\+Sock@{Lib\+Sock}}
+\subsubsection[{Envoie\+Message(int s, char $\ast$format,...)}]{\setlength{\rightskip}{0pt plus 5cm}int Envoie\+Message (
+\begin{DoxyParamCaption}
+\item[{int}]{s, }
+\item[{char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{group__sock_lib_ga443d2ded4b69530a3f4648e6e8b903e1}
+envoie le message format� sur la socket s (comme un printf) 
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: la socket sur laquel ecrire le message \\
+\hline
+{\em format} & \+: le format du message (comme pour printf) \\
+\hline
+{\em ...} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le nombre d\textquotesingle{}octet �crit ou -\/1 s\textquotesingle{}il y a eu un probl�me 
+\end{DoxyReturn}
+\hypertarget{group__sock_lib_ga86f7976d4005ff8c38a9f8f19d43d070}{}\index{Lib\+Sock@{Lib\+Sock}!Recoie\+Et\+Sauve\+Donnees@{Recoie\+Et\+Sauve\+Donnees}}
+\index{Recoie\+Et\+Sauve\+Donnees@{Recoie\+Et\+Sauve\+Donnees}!Lib\+Sock@{Lib\+Sock}}
+\subsubsection[{Recoie\+Et\+Sauve\+Donnees(int fd, int sock)}]{\setlength{\rightskip}{0pt plus 5cm}int Recoie\+Et\+Sauve\+Donnees (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{int}]{sock}
+\end{DoxyParamCaption}
+)}\label{group__sock_lib_ga86f7976d4005ff8c38a9f8f19d43d070}
+Lire les donn�es sur une socket et les �crire automatiquement dans un descripteur de fichier Cette fonction stoppe la lecture lorsque la soket est ferm�e. 
+\begin{DoxyParams}{Parameters}
+{\em sock} & \+: la socket d\textquotesingle{}o� proviennent les donn�es, cela fonctionne aussi si sock est un file descriptor quelconque \\
+\hline
+{\em fd} & \+: le descripteur de fichier sur lesquel enregistrer les donn�es \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: si cela a fonctionn� le nombre d\textquotesingle{}octets lus, sinon -\/1 
+\end{DoxyReturn}
+\hypertarget{group__sock_lib_ga954224eeb3b54e20383d3ccdf4de5db3}{}\index{Lib\+Sock@{Lib\+Sock}!Recoie\+Ligne@{Recoie\+Ligne}}
+\index{Recoie\+Ligne@{Recoie\+Ligne}!Lib\+Sock@{Lib\+Sock}}
+\subsubsection[{Recoie\+Ligne(int sock)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Recoie\+Ligne (
+\begin{DoxyParamCaption}
+\item[{int}]{sock}
+\end{DoxyParamCaption}
+)}\label{group__sock_lib_ga954224eeb3b54e20383d3ccdf4de5db3}
+Lire les donn�es sur une socket (uniquement j\textquotesingle{}utilise recv) jusqu\textquotesingle{}� arriv� � un retour chariot \textquotesingle{}~\newline
+\textquotesingle{} la donn�e est stok�e dans un tableau dont la taille est adapt� pour cela). 
+\begin{DoxyParams}{Parameters}
+{\em sock} & \+: la socket de lecture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la chaine lue � lib�rer par free 
+\end{DoxyReturn}
+\hypertarget{group__sock_lib_ga04edb3bc7a730e2fe5a9560e9aa130f4}{}\index{Lib\+Sock@{Lib\+Sock}!Test\+Lecture@{Test\+Lecture}}
+\index{Test\+Lecture@{Test\+Lecture}!Lib\+Sock@{Lib\+Sock}}
+\subsubsection[{Test\+Lecture(int s)}]{\setlength{\rightskip}{0pt plus 5cm}int Test\+Lecture (
+\begin{DoxyParamCaption}
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)}\label{group__sock_lib_ga04edb3bc7a730e2fe5a9560e9aa130f4}
+Regarde s\textquotesingle{}il y a qqchose � lire sur une socket 
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: la socket \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$ -\/1 s\textquotesingle{}il y a une erreur
+\begin{DoxyItemize}
+\item -\/2 s\textquotesingle{}il n\textquotesingle{}y a rien � lire
+\item 0 si la socket est ferm�e
+\item 1 s\textquotesingle{}il y a qqchose � lire
+\end{DoxyItemize}
+\end{DoxyReturn}
+Regarde s\textquotesingle{}il y a qqchose à lire sur une socket 
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: la socket \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$ -\/1 s\textquotesingle{}il y a une erreur
+\begin{DoxyItemize}
+\item -\/2 s\textquotesingle{}il n\textquotesingle{}y a rien à lire
+\item 0 si la socket est fermée
+\item 1 s\textquotesingle{}il y a qqchose à lire 
+\end{DoxyItemize}
+\end{DoxyReturn}

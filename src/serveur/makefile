@@ -1,6 +1,6 @@
 EXEC=serveur
 BIN_DIR=../../bin/serveur
-LIB_DIR=../../lib/libsock.a
+LIB_DIR=../../lib/*.a
 
 SRC=$(wildcard *.c)
 OBJ=$(SRC:.c=.o)

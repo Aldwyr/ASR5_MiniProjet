@@ -1,0 +1,48 @@
+\hypertarget{socklib_8h}{}\section{/\+Users/gregorygueux/\+Clion\+Projects/\+A\+S\+R5\+\_\+\+Mini\+Projet/src/commun/socklib.h File Reference}
+\label{socklib_8h}\index{/\+Users/gregorygueux/\+Clion\+Projects/\+A\+S\+R5\+\_\+\+Mini\+Projet/src/commun/socklib.\+h@{/\+Users/gregorygueux/\+Clion\+Projects/\+A\+S\+R5\+\_\+\+Mini\+Projet/src/commun/socklib.\+h}}
+
+
+Contient les prototypes des fonctioncs de socklib.\+c.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{socklib_8h_a26769957ec1a2beaf223f33b66ee64ab}{}\#define {\bfseries I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+O\+C\+K\+E\+T}~-\/1\label{socklib_8h_a26769957ec1a2beaf223f33b66ee64ab}
+
+\item 
+\hypertarget{socklib_8h_a633b0396ff93d336a088412a190a5072}{}\#define {\bfseries S\+O\+C\+K\+E\+T\+\_\+\+E\+R\+R\+O\+R}~-\/1\label{socklib_8h_a633b0396ff93d336a088412a190a5072}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__sock_lib_ga8121aa8dd7fe1c345cd6addefa40281d}{Cree\+Socket\+Serveur} (const char $\ast$port)
+\begin{DoxyCompactList}\small\item\em Cree une socket d\textquotesingle{}attente pour le serveur sur le port port. \end{DoxyCompactList}\item 
+\hypertarget{group__sock_lib_ga2b1f3d897fd30b2f0df7fe2bd76509d9}{}int {\bfseries Cree\+Socket\+Client} (const char $\ast$serveur, const char $\ast$port)\label{group__sock_lib_ga2b1f3d897fd30b2f0df7fe2bd76509d9}
+
+\item 
+\hypertarget{group__sock_lib_gad4c89061f7a106e203d519efa2ca869a}{}int \hyperlink{group__sock_lib_gad4c89061f7a106e203d519efa2ca869a}{Accept\+Connexion} (int s)\label{group__sock_lib_gad4c89061f7a106e203d519efa2ca869a}
+
+\begin{DoxyCompactList}\small\item\em retourne la socket accept�e \end{DoxyCompactList}\item 
+int \hyperlink{group__sock_lib_ga86f7976d4005ff8c38a9f8f19d43d070}{Recoie\+Et\+Sauve\+Donnees} (int fd, int sock)
+\item 
+char $\ast$ \hyperlink{group__sock_lib_ga954224eeb3b54e20383d3ccdf4de5db3}{Recoie\+Ligne} (int sock)
+\item 
+int \hyperlink{group__sock_lib_ga443d2ded4b69530a3f4648e6e8b903e1}{Envoie\+Message} (int s, char $\ast$format,...)
+\item 
+int \hyperlink{group__sock_lib_ga04edb3bc7a730e2fe5a9560e9aa130f4}{Test\+Lecture} (int s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contient les prototypes des fonctioncs de socklib.\+c. 
+
+\begin{DoxyAuthor}{Author}
+Rico Fabien \href{mailto:fabien.rico@univ-lyon1.fr}{\tt fabien.\+rico@univ-\/lyon1.\+fr} 
+\end{DoxyAuthor}

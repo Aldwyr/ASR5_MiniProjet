@@ -1,0 +1,91 @@
+\hypertarget{group__usual_fct}{}\section{Usual\+Fonction}
+\label{group__usual_fct}\index{Usual\+Fonction@{Usual\+Fonction}}
+
+
+Les fonctions utile pour le client et le serveur.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__usual_fct_ga33dbce8999f84c76a2425369bbddc9f5}{fct\+Error\+Personal} (int value)
+\begin{DoxyCompactList}\small\item\em evalue la fonction si elle ne retourne pas une erreur. \end{DoxyCompactList}\item 
+int \hyperlink{group__usual_fct_gaccaaebf00419eb1f7b110e211d25b837}{read\+Line} (char $\ast$str, const int size)
+\begin{DoxyCompactList}\small\item\em lit une ligne sur l\textquotesingle{}entrée standard et vérifier la fonction fgets. \end{DoxyCompactList}\item 
+int \hyperlink{group__usual_fct_gab027a4fba3a8e8592e72df57d370b7be}{read\+Char} (char $\ast$c)
+\begin{DoxyCompactList}\small\item\em lit un caractère sur l\textquotesingle{}entrée standard et vérifier la fonction fgetc. \end{DoxyCompactList}\item 
+\hypertarget{group__usual_fct_ga294587294111bfede1e11bdf876b6d10}{}void \hyperlink{group__usual_fct_ga294587294111bfede1e11bdf876b6d10}{vider\+Buffer} ()\label{group__usual_fct_ga294587294111bfede1e11bdf876b6d10}
+
+\begin{DoxyCompactList}\small\item\em vide le buffer de la sortie standard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Les fonctions utile pour le client et le serveur. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__usual_fct_ga33dbce8999f84c76a2425369bbddc9f5}{}\index{Usual\+Fonction@{Usual\+Fonction}!fct\+Error\+Personal@{fct\+Error\+Personal}}
+\index{fct\+Error\+Personal@{fct\+Error\+Personal}!Usual\+Fonction@{Usual\+Fonction}}
+\subsubsection[{fct\+Error\+Personal(int value)}]{\setlength{\rightskip}{0pt plus 5cm}void fct\+Error\+Personal (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}\label{group__usual_fct_ga33dbce8999f84c76a2425369bbddc9f5}
+
+
+evalue la fonction si elle ne retourne pas une erreur. 
+
+\begin{DoxyWarning}{Warning}
+si une erreur est détecté, le programme est quittée sans fermer le serveur. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & la valeur du param retourné. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__usual_fct_gab027a4fba3a8e8592e72df57d370b7be}{}\index{Usual\+Fonction@{Usual\+Fonction}!read\+Char@{read\+Char}}
+\index{read\+Char@{read\+Char}!Usual\+Fonction@{Usual\+Fonction}}
+\subsubsection[{read\+Char(char $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}int read\+Char (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{group__usual_fct_gab027a4fba3a8e8592e72df57d370b7be}
+
+
+lit un caractère sur l\textquotesingle{}entrée standard et vérifier la fonction fgetc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Un pointeur sur un char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si fgetc a rencontré une erreur. 
+
+1 si tout s\textquotesingle{}est bien passé. 
+\end{DoxyReturn}
+\hypertarget{group__usual_fct_gaccaaebf00419eb1f7b110e211d25b837}{}\index{Usual\+Fonction@{Usual\+Fonction}!read\+Line@{read\+Line}}
+\index{read\+Line@{read\+Line}!Usual\+Fonction@{Usual\+Fonction}}
+\subsubsection[{read\+Line(char $\ast$str, const int size)}]{\setlength{\rightskip}{0pt plus 5cm}int read\+Line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{const int}]{size}
+\end{DoxyParamCaption}
+)}\label{group__usual_fct_gaccaaebf00419eb1f7b110e211d25b837}
+
+
+lit une ligne sur l\textquotesingle{}entrée standard et vérifier la fonction fgets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & le buffer où sera écrit la chaine de caractère. \\
+\hline
+{\em size} & la taille à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si fgets n\textquotesingle{}a pas fonctionné. 
+
+1 si tout s\textquotesingle{}est bien passsé. 
+\end{DoxyReturn}

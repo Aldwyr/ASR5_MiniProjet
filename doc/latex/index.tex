@@ -1,0 +1,10 @@
+Vous trouverez ici toute la documentation relative au projet de création d\textquotesingle{}un protocole client serveur.\begin{DoxyAuthor}{Author}
+Gregory G\+U\+E\+U\+X \href{mailto:gregory.gueux@etu.univ-lyon1.fr}{\tt gregory.\+gueux@etu.\+univ-\/lyon1.\+fr}
+\end{DoxyAuthor}
+\hypertarget{index_sec1}{}\section{le projet}\label{index_sec1}
+\hypertarget{index_sub11}{}\subsection{En résumé}\label{index_sub11}
+le but du projet est de créer un protocole de communication entre deux processus qui n\textquotesingle{}ont pas forcément de lien entre eux (via un fork par exemple). Cela, grâce à l\textquotesingle{}utilisation des sockets.\hypertarget{index_sub12}{}\subsection{Client}\label{index_sub12}
+Le client est le programme qui doit se trouver sur la machine de l\textquotesingle{}utilsateur. Il permet d\textquotesingle{}envoyer un rapport au Serveur ou de demander que ce dernier fasse un rapport completer sur les derniers rapport reçu.\hypertarget{index_sub13}{}\subsection{Serveur}\label{index_sub13}
+Le serveur doit être présent soit sur une machine distante soit sur la machine en local. Il s\textquotesingle{}occupe de récupèrer les rapports des clients et de faire un rapport sur ces derniers sur demande du client. \begin{DoxyWarning}{Warning}
+il doit être lancé A\+V\+A\+N\+T le client. 
+\end{DoxyWarning}

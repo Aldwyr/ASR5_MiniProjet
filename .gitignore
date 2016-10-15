@@ -5,3 +5,4 @@ bin/serveur/serveur
 bin/client/client
 
 lib/libsock.a
+lib/*.a

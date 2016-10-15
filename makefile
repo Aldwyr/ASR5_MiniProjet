@@ -1,6 +1,7 @@
 export CC=gcc
-export CFLAGS=-W -Wall -ansi -pedantic -std=c11
-export LDFLAGS= ../../lib/libsock.a
+export CFLAGS=-W -g -Wall -ansi -pedantic -std=c11
+export LIB_DIR= ../../lib
+export LDFLAGS= $(LIB_DIR)/libsock.a $(LIB_DIR)/libUsualFonction.a
 
 
 CLIENT_DIR=src/client
