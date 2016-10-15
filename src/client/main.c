@@ -7,19 +7,50 @@
 #define VERSION_LOGICIEL 1
 #define SEND_RAPPORT 001
 #define MAKE_MRAPPORT 002
+#define TAILLE_MSG 32768  // 2^15 octet pour écrire, c'est pas mal, non ? :D
 
 
+//TODO: On peut proposer d'envoyer un fichier au lieu d'écrire un texte.
 void sendRapport(){
     int socketServeur;
+    long int order = SEND_RAPPORT;
+    size_t actualMsgTaille = 0;
+    char resp = 'n';
     char *host = "localhost";
     char *port = "8080";
-    printf("je suis la fonction pour envoyer un rapport.\n");
+    char buff[TAILLE_MSG] = {'\0'};
+    char *finalRapport = malloc(sizeof(char));
+    //   printf("je suis la fonction pour envoyer un rapport.\n");
 
 
+/*
     socketServeur = CreeSocketClient(host, port);
+    if (socketServeur == -1) {
+        return;
+    }
+*/
     // Si on arrive la, c'est que le client est connecté au serveur. On peut donc commencer à envoyer des données.
-    EnvoieMessage(socketServeur, "Ceci est un test : %d", 42);
 
+    do {
+        printf("Merci d'écrire votre rapport :\nUne fois fini, appuyer 2 fois de suite sur la touche entrée\n");
+        fgets(buff, TAILLE_MSG, stdin);
+        if (strcmp(buff, "\n")) {
+            do {
+                printf("fin saisie du rapport, en êtes vous sûr ? Y/n\n");
+                resp = fgetc(stdin);
+            } while (resp != 'Y' && resp != 'n');
+
+        }
+        if (resp != 'Y') {
+            if (memcmp(finalRapport, buff, strlen(buff) + actualMsgTaille) < 0) {
+                finalRapport = realloc(finalRapport, strlen(buff) + actualMsgTaille);
+            }
+            actualMsgTaille += strlen(buff);
+            strcat(finalRapport, buff);
+        }
+    } while (resp == 'Y');
+    printf("test\n");
+    printf("%s", finalRapport);
 }
 
 void receiveRapport(){

@@ -6,8 +6,8 @@
 #define TAILL_BUFF 256
 
 int recupOrder(const int sClient) {
-    int nbRead = 0;
-    char buff[TAILL_BUFF];
+//    int nbRead = 0;
+    //   char buff[TAILL_BUFF];
 
     return 0;
 }
