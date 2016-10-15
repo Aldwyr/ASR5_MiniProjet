@@ -1,5 +1,5 @@
 export CC=gcc
-export CFLAGS=-W -Wall -ansi -pedantic -std=c11
+export CFLAGS=-W -g -Wall -ansi -pedantic -std=c11
 export LDFLAGS= ../../lib/libsock.a
 
 
