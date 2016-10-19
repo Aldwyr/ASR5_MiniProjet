@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['testlecture', ['TestLecture', ['../group__sock_lib.html#ga04edb3bc7a730e2fe5a9560e9aa130f4', 1, 'TestLecture(int s):&#160;socklib.c'], ['../group__sock_lib.html#ga04edb3bc7a730e2fe5a9560e9aa130f4', 1, 'TestLecture(int s):&#160;socklib.c']]]
+        ['menu', ['menu', ['../group__main.html#ga2a0e843767aeea4f433a28b9c54f573a', 1, 'menu():&#160;client.c'], ['../group__main.html#ga2a0e843767aeea4f433a28b9c54f573a', 1, 'menu():&#160;client.c']]]
     ];

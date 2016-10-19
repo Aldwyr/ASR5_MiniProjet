@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['libsock', ['LibSock', ['../group__sock_lib.html', 1, '']]]
+        ['client', ['Client', ['../group__main.html', 1, '']]]
     ];

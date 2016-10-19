@@ -1,12 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
 #include "creatConnexion.h"
 #include "../commun/socklib.h"
 #include "../commun/usualFct.h"
-#define SEND_RAPPORT 001
-#define MAKE_MRAPPORT 002
+#include "headerClient.h"
+
+#define SEND_RAPPORT 1
+#define MAKE_MRAPPORT 2
+#define STOP_SERVEUR 3
 #define TAILLE_MSG 32768  // 2^15 octet pour écrire, c'est pas mal, non ? :D
 
 
@@ -21,11 +23,40 @@ void kingdomOfFreedom(void **newFreeGuys) {
     *newFreeGuys = NULL;
 }
 
-void sendReport(char *report, char *pseudo) {
+//TODO: free completeBuffer
+void set_buffer_head(char **completBuffer, const char order, const char pseudo[]) {
+    *completBuffer = malloc(sizeof(char));
+    size_t sizePseudo = strlen(pseudo);
+
+    *completBuffer[0] = order;
+    // On veut : connaitre la taille des objet à mettre dans le tableau.
+    // CAD, la taille en octect du pseudo, la taille du pseudo
+    memcpy(*completBuffer, &sizePseudo, sizeof(size_t));
+    memcpy(*completBuffer, pseudo, sizeof(char) + strlen(pseudo) + 1);
 
 }
 
+void set_buffer_body(char **completBuffer, const char *msg) {
+    size_t sizeMsg = strlen(msg);
+
+    memcpy(*completBuffer, &sizeMsg, sizeof(size_t));
+    memcpy(*completBuffer, msg, sizeof(char) + strlen(msg));
+}
+
+void sendReport(int s, char *report, char *pseudo) {
+    // 1er temps, envoie de l'ordre voulu.
+    char *completBuffer = NULL;
+    char order = SEND_RAPPORT;
+
+    set_buffer_head(&completBuffer, order, pseudo);
+    set_buffer_body(&completBuffer, report);
+
+
+    kingdomOfFreedom(&completBuffer);
+}
+
 //TODO: On peut proposer d'envoyer un fichier au lieu d'écrire un texte.
+//TODO: On peut prendre en compte le ctrl+D pour faire le EOF. :)
 void newReport() {
     int socketServeur;
     size_t actualMsgTaille = 0;
@@ -73,7 +104,7 @@ void newReport() {
             strcat(finalRapport, buff);
         }
     }
-    sendReport(finalRapport, pseudo);
+    sendReport(socketServeur, finalRapport, pseudo);
     kingdomOfFreedom((void *) &finalRapport);
 }
 

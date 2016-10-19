@@ -12,7 +12,7 @@ int recupOrder(const int sClient) {
     return 0;
 }
 
-int newCommunication(const int sClient) {
+int newCommunication(int sClient) {
     int resFork = 0;
 
     resFork = fork();
@@ -32,15 +32,23 @@ int newCommunication(const int sClient) {
 void waitConnexion(int s) {
     int list_error = 0, com_error = 0;
     int socketAccepted = 0;
+    int stop = 0;
 
-    list_error = listen(s, 1);
+    list_error = listen(s, 2);
     if (list_error == -1) {
         perror("listen\n");
         close(s);
         exit(EXIT_FAILURE);
     }
-    socketAccepted = AcceptConnexion(s);
-    com_error = newCommunication(socketAccepted);
+    while (stop != 1) {
+        socketAccepted = AcceptConnexion(s);
+        com_error = newCommunication(socketAccepted);
+        if (com_error == -1) {
+            printf("Erreur lors de la création de la communication.\n");
+            close(s);
+        }
+
+    }
 
 }
 

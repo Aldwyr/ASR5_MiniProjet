@@ -1,8 +1,0 @@
-//
-// Created by Grégory GUEUX on 18/10/2016.
-//
-
-#ifndef CLIENT_CREATIONREPORT_H
-#define CLIENT_CREATIONREPORT_H
-
-#endif //CLIENT_CREATIONREPORT_H

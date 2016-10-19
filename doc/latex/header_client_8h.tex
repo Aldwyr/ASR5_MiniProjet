@@ -1,0 +1,42 @@
+\hypertarget{header_client_8h}{}\section{/\+Users/gregorygueux/\+Clion\+Projects/\+A\+S\+R5\+\_\+\+Mini\+Projet/src/client/header\+Client.h File Reference}
+\label{header_client_8h}\index{/\+Users/gregorygueux/\+Clion\+Projects/\+A\+S\+R5\+\_\+\+Mini\+Projet/src/client/header\+Client.\+h@{/\+Users/gregorygueux/\+Clion\+Projects/\+A\+S\+R5\+\_\+\+Mini\+Projet/src/client/header\+Client.\+h}}
+
+
+Contient les prototypes des fonctions de main.\+c.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__main_ga2a0e843767aeea4f433a28b9c54f573a}{}void \hyperlink{group__main_ga2a0e843767aeea4f433a28b9c54f573a}{menu} ()\label{group__main_ga2a0e843767aeea4f433a28b9c54f573a}
+
+\begin{DoxyCompactList}\small\item\em affichie le menu des choix à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+\hypertarget{group__main_gacc28d96d3dde01fd0b1290d67ed5c521}{}void \hyperlink{group__main_gacc28d96d3dde01fd0b1290d67ed5c521}{receive\+Rapport} ()\label{group__main_gacc28d96d3dde01fd0b1290d67ed5c521}
+
+\begin{DoxyCompactList}\small\item\em permet de recevoir le rapport mensuelle. \end{DoxyCompactList}\item 
+\hypertarget{group__main_gaa404f7b3293c0f454e9afdd108c7b35e}{}void \hyperlink{group__main_gaa404f7b3293c0f454e9afdd108c7b35e}{new\+Report} ()\label{group__main_gaa404f7b3293c0f454e9afdd108c7b35e}
+
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}écrire ou d\textquotesingle{}envoyer un nouveau rapport. \end{DoxyCompactList}\item 
+void \hyperlink{group__main_ga7d6a98e7522d16b636002acaed73e98e}{send\+Report} (int socket\+Serveur, char $\ast$report, char $\ast$pseudo)
+\begin{DoxyCompactList}\small\item\em envoie le rapport au seveur. \end{DoxyCompactList}\item 
+void \hyperlink{group__main_gac0e6b092ca870499ed8aa48295046527}{kingdom\+Of\+Freedom} (void $\ast$$\ast$new\+Free\+Guys)
+\begin{DoxyCompactList}\small\item\em parce que tout le monde aspire à la liberté, même des octets veulent pouvoir bénéficier de cela. \end{DoxyCompactList}\item 
+void \hyperlink{group__main_gaddc404e3b046aad347a092251d8ad25c}{pseudo\+User} (char pseudo\mbox{[}25\mbox{]})
+\begin{DoxyCompactList}\small\item\em Permet de récupérer le pseudo de l\textquotesingle{}utilisateur sur l\textquotesingle{}entrée standard. \end{DoxyCompactList}\item 
+void \hyperlink{group__main_ga21d1bed03ebb416b623232da3a709eaa}{set\+\_\+buffer\+\_\+head} (char $\ast$$\ast$complet\+Buffer, const char order, const char pseudo\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Initialise la tête du buffer à envoyer au server avec, dans l\textquotesingle{}order \+: le Buffer, la taille du pseudo, le pseudo. \end{DoxyCompactList}\item 
+void \hyperlink{group__main_ga52a26b6e09ccf335eb8dffb7909684b2}{set\+\_\+buffer\+\_\+body} (char $\ast$$\ast$complet\+Buffer, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Ajoute la taille du message et le corps du rapport au buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$)() \hyperlink{group__main_ga8ec19ec9491838d0c0d5ebca1e4a930c}{menu\+Chosen} ()
+\begin{DoxyCompactList}\small\item\em La fonction permet de selection une fonction selon le choix du client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contient les prototypes des fonctions de main.\+c. 
+
+\begin{DoxyAuthor}{Author}
+Grégory Gueux \href{mailto:gregory.gueux@etu.univ-lyon1.fr}{\tt gregory.\+gueux@etu.\+univ-\/lyon1.\+fr} 
+\end{DoxyAuthor}

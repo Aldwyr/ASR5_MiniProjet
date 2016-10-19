@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['usualfonction', ['UsualFonction', ['../group__usual_fct.html', 1, '']]]
+        ['libsock', ['LibSock', ['../group__sock_lib.html', 1, '']]]
     ];
