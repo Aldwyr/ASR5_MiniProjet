@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "creatConnexion.h"
 #include "../commun/socklib.h"
 #include "../commun/usualFct.h"
 

@@ -16,7 +16,9 @@ int \hyperlink{group__usual_fct_gab027a4fba3a8e8592e72df57d370b7be}{read\+Char} 
 \begin{DoxyCompactList}\small\item\em lit un caractère sur l\textquotesingle{}entrée standard et vérifier la fonction fgetc. \end{DoxyCompactList}\item 
 \hypertarget{group__usual_fct_ga294587294111bfede1e11bdf876b6d10}{}void \hyperlink{group__usual_fct_ga294587294111bfede1e11bdf876b6d10}{vider\+Buffer} ()\label{group__usual_fct_ga294587294111bfede1e11bdf876b6d10}
 
-\begin{DoxyCompactList}\small\item\em vide le buffer de la sortie standard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em vide le buffer de la sortie standard. \end{DoxyCompactList}\item 
+void \hyperlink{group__usual_fct_ga0378ff580d4cea4933a94ce086e9e84e}{convert\+Int\+To\+Char} (char $\ast$tab, const size\+\_\+t interger\+To\+Convert)
+\begin{DoxyCompactList}\small\item\em Convertie un entier int en char $\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -25,6 +27,25 @@ Les fonctions utile pour le client et le serveur.
 
 
 \subsection{Function Documentation}
+\hypertarget{group__usual_fct_ga0378ff580d4cea4933a94ce086e9e84e}{}\index{Usual\+Fonction@{Usual\+Fonction}!convert\+Int\+To\+Char@{convert\+Int\+To\+Char}}
+\index{convert\+Int\+To\+Char@{convert\+Int\+To\+Char}!Usual\+Fonction@{Usual\+Fonction}}
+\subsubsection[{convert\+Int\+To\+Char(char $\ast$tab, const size\+\_\+t interger\+To\+Convert)}]{\setlength{\rightskip}{0pt plus 5cm}void convert\+Int\+To\+Char (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tab, }
+\item[{const size\+\_\+t}]{interger\+To\+Convert}
+\end{DoxyParamCaption}
+)}\label{group__usual_fct_ga0378ff580d4cea4933a94ce086e9e84e}
+
+
+Convertie un entier int en char $\ast$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab} & le tableau ou sera stocker le char$\ast$ \\
+\hline
+{\em interger\+To\+Convert} & L\textquotesingle{}entier à convertir. \\
+\hline
+\end{DoxyParams}
 \hypertarget{group__usual_fct_ga33dbce8999f84c76a2425369bbddc9f5}{}\index{Usual\+Fonction@{Usual\+Fonction}!fct\+Error\+Personal@{fct\+Error\+Personal}}
 \index{fct\+Error\+Personal@{fct\+Error\+Personal}!Usual\+Fonction@{Usual\+Fonction}}
 \subsubsection[{fct\+Error\+Personal(int value)}]{\setlength{\rightskip}{0pt plus 5cm}void fct\+Error\+Personal (

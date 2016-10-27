@@ -1,8 +1,6 @@
 var searchData =
     [
-        ['readchar', ['readChar', ['../group__usual_fct.html#gab027a4fba3a8e8592e72df57d370b7be', 1, 'readChar(char *c):&#160;usualFct.c'], ['../group__usual_fct.html#gab027a4fba3a8e8592e72df57d370b7be', 1, 'readChar(char *c):&#160;usualFct.c']]],
-        ['readline', ['readLine', ['../group__usual_fct.html#gaccaaebf00419eb1f7b110e211d25b837', 1, 'readLine(char *str, const int size):&#160;usualFct.c'], ['../group__usual_fct.html#gaccaaebf00419eb1f7b110e211d25b837', 1, 'readLine(char *str, const int size):&#160;usualFct.c']]],
-        ['receiverapport', ['receiveRapport', ['../group__main.html#gacc28d96d3dde01fd0b1290d67ed5c521', 1, 'receiveRapport():&#160;client.c'], ['../group__main.html#gacc28d96d3dde01fd0b1290d67ed5c521', 1, 'receiveRapport():&#160;client.c']]],
-        ['recoieetsauvedonnees', ['RecoieEtSauveDonnees', ['../group__sock_lib.html#ga86f7976d4005ff8c38a9f8f19d43d070', 1, 'RecoieEtSauveDonnees(int fd, int s):&#160;socklib.c'], ['../group__sock_lib.html#ga86f7976d4005ff8c38a9f8f19d43d070', 1, 'RecoieEtSauveDonnees(int fd, int sock):&#160;socklib.c']]],
-        ['recoieligne', ['RecoieLigne', ['../group__sock_lib.html#ga954224eeb3b54e20383d3ccdf4de5db3', 1, 'RecoieLigne(int sock):&#160;socklib.c'], ['../group__sock_lib.html#ga954224eeb3b54e20383d3ccdf4de5db3', 1, 'RecoieLigne(int sock):&#160;socklib.c']]]
+        ['projet_20creation_20de_20protocole', ['projet creation de protocole', ['../index.html', 1, '']]],
+        ['pseudo', ['pseudo', ['../group__client.html#gae6cc99604162931ab8baf652f1a03682', 1, 'sbufferToSend::pseudo()'], ['../group__serveur.html#gae6cc99604162931ab8baf652f1a03682', 1, 'sbufferToReceive::pseudo()']]],
+        ['pseudouser', ['pseudoUser', ['../group__client.html#gaddc404e3b046aad347a092251d8ad25c', 1, 'pseudoUser(char pseudo[25]):&#160;client.c'], ['../group__client.html#gaddc404e3b046aad347a092251d8ad25c', 1, 'pseudoUser(char pseudo[25]):&#160;client.c']]]
     ];

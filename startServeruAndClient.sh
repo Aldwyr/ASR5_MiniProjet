@@ -1,11 +1,13 @@
 #!/bin/bash
-# Fichier "startServeur"
+# Fichier "startServeurAndClient"
 
 sh creationLib.sh
 
 make re
 make clean
-./bin/serveur/serveur&
+cd bin/serveur/
+sh startServeur.sh
 sleep 1
+cd ../client/
 clear
-./bin/client/client
+sh starClient.sh

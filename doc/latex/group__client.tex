@@ -1,0 +1,196 @@
+\hypertarget{group__client}{}\section{Client}
+\label{group__client}\index{Client@{Client}}
+
+
+Les fonctions principaux du client.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsbuffer_to_send}{sbuffer\+To\+Send}
+\item 
+struct \hyperlink{structs_buffer_to_send}{s\+Buffer\+To\+Send}
+\begin{DoxyCompactList}\small\item\em Représente un rapport complet avec le header à envoyer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__client_ga66d0ddc08cd4b69d81f637d5c0ffdc03}{}typedef struct \hyperlink{structsbuffer_to_send}{sbuffer\+To\+Send} {\bfseries buffer\+To\+Send}\label{group__client_ga66d0ddc08cd4b69d81f637d5c0ffdc03}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__client_ga2a0e843767aeea4f433a28b9c54f573a}{}void \hyperlink{group__client_ga2a0e843767aeea4f433a28b9c54f573a}{menu} ()\label{group__client_ga2a0e843767aeea4f433a28b9c54f573a}
+
+\begin{DoxyCompactList}\small\item\em affichie le menu des choix à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+\hypertarget{group__client_gacc28d96d3dde01fd0b1290d67ed5c521}{}void \hyperlink{group__client_gacc28d96d3dde01fd0b1290d67ed5c521}{receive\+Rapport} ()\label{group__client_gacc28d96d3dde01fd0b1290d67ed5c521}
+
+\begin{DoxyCompactList}\small\item\em permet de recevoir le rapport mensuelle. \end{DoxyCompactList}\item 
+\hypertarget{group__client_gaa404f7b3293c0f454e9afdd108c7b35e}{}void \hyperlink{group__client_gaa404f7b3293c0f454e9afdd108c7b35e}{new\+Report} ()\label{group__client_gaa404f7b3293c0f454e9afdd108c7b35e}
+
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}écrire ou d\textquotesingle{}envoyer un nouveau rapport. \end{DoxyCompactList}\item 
+void \hyperlink{group__client_ga579c9c1d62bd4fe80e72dfc424e88251}{send\+Report} (int socket\+Serveur, \hyperlink{structsbuffer_to_send}{buffer\+To\+Send} $\ast$report)
+\begin{DoxyCompactList}\small\item\em envoie le rapport au seveur. \end{DoxyCompactList}\item 
+void \hyperlink{group__client_gac0e6b092ca870499ed8aa48295046527}{kingdom\+Of\+Freedom} (void $\ast$$\ast$new\+Free\+Guys)
+\begin{DoxyCompactList}\small\item\em parce que tout le monde aspire à la liberté, même des octets veulent pouvoir bénéficier de cela. \end{DoxyCompactList}\item 
+void \hyperlink{group__client_gaddc404e3b046aad347a092251d8ad25c}{pseudo\+User} (char pseudo\mbox{[}25\mbox{]})
+\begin{DoxyCompactList}\small\item\em Permet de récupérer le pseudo de l\textquotesingle{}utilisateur sur l\textquotesingle{}entrée standard. \end{DoxyCompactList}\item 
+void \hyperlink{group__client_ga77b9bbe116a27d989907f5e1883ed4c0}{set\+\_\+buffer\+\_\+struct} (\hyperlink{structsbuffer_to_send}{buffer\+To\+Send} $\ast$report)
+\begin{DoxyCompactList}\small\item\em Complète la structure du rapport. C\textquotesingle{}est-\/à-\/dire la taille du pseudo et la taile du message. \end{DoxyCompactList}\item 
+void \hyperlink{group__client_ga6fccf851c95d9610cf70360d8c0e30c6}{send\+Report\+To\+Serveur} (const int s\+Serveur, \hyperlink{structsbuffer_to_send}{buffer\+To\+Send} $\ast$report)
+\begin{DoxyCompactList}\small\item\em Envoie l\textquotesingle{}ordre au client. \end{DoxyCompactList}\item 
+\hypertarget{group__client_ga7de73413f4b6a3568d7e7891aa595424}{}void \hyperlink{group__client_ga7de73413f4b6a3568d7e7891aa595424}{stop\+Serveur} ()\label{group__client_ga7de73413f4b6a3568d7e7891aa595424}
+
+\begin{DoxyCompactList}\small\item\em Arrête le serveur distant. \end{DoxyCompactList}\item 
+void \hyperlink{group__client_ga79da17de173cd0d0da5d6e07e6e377f4}{send\+To\+Serveur} (int s\+Serveur, char $\ast$msg, int size\+Msg)
+\begin{DoxyCompactList}\small\item\em envoie quelque chose sur la socket donnée \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__client_ga907c3a6256dd10a071ee545d4249825a}{}char \hyperlink{group__client_ga907c3a6256dd10a071ee545d4249825a}{order} \mbox{[}4\mbox{]}\label{group__client_ga907c3a6256dd10a071ee545d4249825a}
+
+\begin{DoxyCompactList}\small\item\em l\textquotesingle{}ordre qui est envoyé. \end{DoxyCompactList}\item 
+\hypertarget{group__client_ga076b5d65b30fabbb37beeb44450a5698}{}char \hyperlink{group__client_ga076b5d65b30fabbb37beeb44450a5698}{size\+Pseudo} \mbox{[}3\mbox{]}\label{group__client_ga076b5d65b30fabbb37beeb44450a5698}
+
+\begin{DoxyCompactList}\small\item\em La taille du pseudo. \end{DoxyCompactList}\item 
+\hypertarget{group__client_gae6cc99604162931ab8baf652f1a03682}{}char \hyperlink{group__client_gae6cc99604162931ab8baf652f1a03682}{pseudo} \mbox{[}25\mbox{]}\label{group__client_gae6cc99604162931ab8baf652f1a03682}
+
+\begin{DoxyCompactList}\small\item\em Le pseudo. \end{DoxyCompactList}\item 
+\hypertarget{group__client_ga86a8c1c1cd8fa6d69fa7558e34f915cf}{}char \hyperlink{group__client_ga86a8c1c1cd8fa6d69fa7558e34f915cf}{size\+Msg} \mbox{[}256\mbox{]}\label{group__client_ga86a8c1c1cd8fa6d69fa7558e34f915cf}
+
+\begin{DoxyCompactList}\small\item\em La taille du message. Qui est limité à 10$^\wedge$256 caractère maxi. \end{DoxyCompactList}\item 
+\hypertarget{group__client_ga32d2f5216cddb59c7cc8fb2806a7e727}{}char $\ast$ \hyperlink{group__client_ga32d2f5216cddb59c7cc8fb2806a7e727}{msg}\label{group__client_ga32d2f5216cddb59c7cc8fb2806a7e727}
+
+\begin{DoxyCompactList}\small\item\em le message. \end{DoxyCompactList}\item 
+void($\ast$)() \hyperlink{group__client_ga8edad37db460231c5b59967d7e5223a1}{menu\+Chosen} ()
+\begin{DoxyCompactList}\small\item\em La fonction permet de selection une fonction selon le choix du client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Les fonctions principaux du client. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__client_gac0e6b092ca870499ed8aa48295046527}{}\index{Client@{Client}!kingdom\+Of\+Freedom@{kingdom\+Of\+Freedom}}
+\index{kingdom\+Of\+Freedom@{kingdom\+Of\+Freedom}!Client@{Client}}
+\subsubsection[{kingdom\+Of\+Freedom(void $\ast$$\ast$new\+Free\+Guys)}]{\setlength{\rightskip}{0pt plus 5cm}void kingdom\+Of\+Freedom (
+\begin{DoxyParamCaption}
+\item[{void $\ast$$\ast$}]{new\+Free\+Guys}
+\end{DoxyParamCaption}
+)}\label{group__client_gac0e6b092ca870499ed8aa48295046527}
+
+
+parce que tout le monde aspire à la liberté, même des octets veulent pouvoir bénéficier de cela. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Free\+Guys} & Un candidiat pour rejoindre le royaume. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__client_gaddc404e3b046aad347a092251d8ad25c}{}\index{Client@{Client}!pseudo\+User@{pseudo\+User}}
+\index{pseudo\+User@{pseudo\+User}!Client@{Client}}
+\subsubsection[{pseudo\+User(char pseudo[25])}]{\setlength{\rightskip}{0pt plus 5cm}void pseudo\+User (
+\begin{DoxyParamCaption}
+\item[{char}]{pseudo\mbox{[}25\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{group__client_gaddc404e3b046aad347a092251d8ad25c}
+
+
+Permet de récupérer le pseudo de l\textquotesingle{}utilisateur sur l\textquotesingle{}entrée standard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pseudo} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__client_ga579c9c1d62bd4fe80e72dfc424e88251}{}\index{Client@{Client}!send\+Report@{send\+Report}}
+\index{send\+Report@{send\+Report}!Client@{Client}}
+\subsubsection[{send\+Report(int socket\+Serveur, buffer\+To\+Send $\ast$report)}]{\setlength{\rightskip}{0pt plus 5cm}void send\+Report (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Serveur, }
+\item[{{\bf buffer\+To\+Send} $\ast$}]{report}
+\end{DoxyParamCaption}
+)}\label{group__client_ga579c9c1d62bd4fe80e72dfc424e88251}
+
+
+envoie le rapport au seveur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket\+Serveur} & La socket du serveur. \\
+\hline
+{\em report} & La structure \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__client_ga6fccf851c95d9610cf70360d8c0e30c6}{}\index{Client@{Client}!send\+Report\+To\+Serveur@{send\+Report\+To\+Serveur}}
+\index{send\+Report\+To\+Serveur@{send\+Report\+To\+Serveur}!Client@{Client}}
+\subsubsection[{send\+Report\+To\+Serveur(const int s\+Serveur, buffer\+To\+Send $\ast$report)}]{\setlength{\rightskip}{0pt plus 5cm}void send\+Report\+To\+Serveur (
+\begin{DoxyParamCaption}
+\item[{const int}]{s\+Serveur, }
+\item[{{\bf buffer\+To\+Send} $\ast$}]{report}
+\end{DoxyParamCaption}
+)}\label{group__client_ga6fccf851c95d9610cf70360d8c0e30c6}
+
+
+Envoie l\textquotesingle{}ordre au client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s\+Serveur} & La socket qui est connecté au client. \\
+\hline
+{\em report} & La structure du rapport. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__client_ga79da17de173cd0d0da5d6e07e6e377f4}{}\index{Client@{Client}!send\+To\+Serveur@{send\+To\+Serveur}}
+\index{send\+To\+Serveur@{send\+To\+Serveur}!Client@{Client}}
+\subsubsection[{send\+To\+Serveur(int s\+Serveur, char $\ast$msg, int size\+Msg)}]{\setlength{\rightskip}{0pt plus 5cm}void send\+To\+Serveur (
+\begin{DoxyParamCaption}
+\item[{int}]{s\+Serveur, }
+\item[{char $\ast$}]{msg, }
+\item[{int}]{size\+Msg}
+\end{DoxyParamCaption}
+)}\label{group__client_ga79da17de173cd0d0da5d6e07e6e377f4}
+
+
+envoie quelque chose sur la socket donnée 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s\+Serveur} & La socket du serveur \\
+\hline
+{\em msg} & Le message à envoyer \\
+\hline
+{\em size\+Msg} & La taille du message à envoyer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__client_ga77b9bbe116a27d989907f5e1883ed4c0}{}\index{Client@{Client}!set\+\_\+buffer\+\_\+struct@{set\+\_\+buffer\+\_\+struct}}
+\index{set\+\_\+buffer\+\_\+struct@{set\+\_\+buffer\+\_\+struct}!Client@{Client}}
+\subsubsection[{set\+\_\+buffer\+\_\+struct(buffer\+To\+Send $\ast$report)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+buffer\+\_\+struct (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+To\+Send} $\ast$}]{report}
+\end{DoxyParamCaption}
+)}\label{group__client_ga77b9bbe116a27d989907f5e1883ed4c0}
+
+
+Complète la structure du rapport. C\textquotesingle{}est-\/à-\/dire la taille du pseudo et la taile du message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em report} & Le rapport complet. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__client_ga8edad37db460231c5b59967d7e5223a1}{}\index{Client@{Client}!menu\+Chosen@{menu\+Chosen}}
+\index{menu\+Chosen@{menu\+Chosen}!Client@{Client}}
+\subsubsection[{menu\+Chosen}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$)() menu\+Chosen()}\label{group__client_ga8edad37db460231c5b59967d7e5223a1}
+
+
+La fonction permet de selection une fonction selon le choix du client. 
+
+\begin{DoxyReturn}{Returns}
+Le pointeur de la fonction choisie par le client. 
+\end{DoxyReturn}

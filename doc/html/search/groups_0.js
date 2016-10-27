@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['client', ['Client', ['../group__main.html', 1, '']]]
+        ['client', ['Client', ['../group__client.html', 1, '']]]
     ];

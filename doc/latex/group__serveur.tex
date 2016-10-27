@@ -1,0 +1,229 @@
+\hypertarget{group__serveur}{}\section{Serveur}
+\label{group__serveur}\index{Serveur@{Serveur}}
+
+
+Les fonctions principals du serveur.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsbuffer_to_receive}{sbuffer\+To\+Receive}
+\item 
+struct \hyperlink{structs_buffer_to_send}{s\+Buffer\+To\+Send}
+\begin{DoxyCompactList}\small\item\em Représente un rapport complet avec le header à envoyer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__serveur_ga7b4ade66d05d5ca3180ad3b42342a89a}{}typedef struct \hyperlink{structsbuffer_to_receive}{sbuffer\+To\+Receive} {\bfseries buffer\+To\+Receive}\label{group__serveur_ga7b4ade66d05d5ca3180ad3b42342a89a}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__serveur_ga909ce3a76ccb623a444a43891e4445da}{recup\+Order} (const int s\+Client, char $\ast$buff)
+\begin{DoxyCompactList}\small\item\em récupère l\textquotesingle{}order du client. \end{DoxyCompactList}\item 
+int \hyperlink{group__serveur_gae724501fae5a588a1b1c6b44156bd67c}{new\+Communication} (int s\+Client)
+\begin{DoxyCompactList}\small\item\em Initialise une nouvelle communication entre le client et le serveur. \end{DoxyCompactList}\item 
+void \hyperlink{group__serveur_ga4f4149b5cd35f8764a337891365f51c0}{wait\+Connexion} (int s)
+\begin{DoxyCompactList}\small\item\em Permet de mettre le processus sur écoute et d\textquotesingle{}attendre une connexion entrante. \end{DoxyCompactList}\item 
+\hypertarget{group__serveur_gad1f7d60ee380c091de6e9f500eefe529}{}void \hyperlink{group__serveur_gad1f7d60ee380c091de6e9f500eefe529}{creation\+Socket} ()\label{group__serveur_gad1f7d60ee380c091de6e9f500eefe529}
+
+\begin{DoxyCompactList}\small\item\em Crée un socket pour le serveur. \end{DoxyCompactList}\item 
+void \hyperlink{group__serveur_ga9588f65b1e3c085c64a2b7d911a6f9b0}{new\+Report} (int s\+Client, \hyperlink{structsbuffer_to_receive}{buffer\+To\+Receive} $\ast$report)
+\begin{DoxyCompactList}\small\item\em récupère et enregistre le rapport qu\textquotesingle{}a envoyé le client. \end{DoxyCompactList}\item 
+void \hyperlink{group__serveur_gab6e538890028e2f672b9462c9e5b173b}{new\+Send\+Report} (int s\+Client, \hyperlink{structsbuffer_to_receive}{buffer\+To\+Receive} $\ast$report)
+\begin{DoxyCompactList}\small\item\em envoie tout les rapports du clients dans un seul fichier. \end{DoxyCompactList}\item 
+void \hyperlink{group__serveur_gaad0cdd4017fa30e4b57becc25487a6d5}{recup\+Time} (char $\ast$new\+Date\+And\+Time, time\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Renvoie la date Local + l\textquotesingle{}heure local. \end{DoxyCompactList}\item 
+void \hyperlink{group__serveur_ga92620a415736d7b5c4c6bae486e95b61}{add\+Log} (\hyperlink{structsbuffer_to_receive}{buffer\+To\+Receive} $\ast$report, const char $\ast$msg, const char $\ast$prefixe)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}ajouter un entrée dans le fichier de log de la sessions. \end{DoxyCompactList}\item 
+void \hyperlink{group__serveur_ga804db011cd3bba22e33e922af9a52c55}{recup\+Information} (int s\+Client, \hyperlink{structsbuffer_to_receive}{buffer\+To\+Receive} $\ast$report)
+\begin{DoxyCompactList}\small\item\em récupère les informations qui sont forcément envoyer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__serveur_gac85d5511fdb8d162a7278bfb440ae420}{}int \hyperlink{group__serveur_gac85d5511fdb8d162a7278bfb440ae420}{order}\label{group__serveur_gac85d5511fdb8d162a7278bfb440ae420}
+
+\begin{DoxyCompactList}\small\item\em l\textquotesingle{}ordre qui est envoyé. \end{DoxyCompactList}\item 
+\hypertarget{group__serveur_gaa87948d9c54a8842c13b61ed4db35092}{}int \hyperlink{group__serveur_gaa87948d9c54a8842c13b61ed4db35092}{size\+Pseudo}\label{group__serveur_gaa87948d9c54a8842c13b61ed4db35092}
+
+\begin{DoxyCompactList}\small\item\em La taille du pseudo. \end{DoxyCompactList}\item 
+\hypertarget{group__serveur_gae6cc99604162931ab8baf652f1a03682}{}char \hyperlink{group__serveur_gae6cc99604162931ab8baf652f1a03682}{pseudo} \mbox{[}25\mbox{]}\label{group__serveur_gae6cc99604162931ab8baf652f1a03682}
+
+\begin{DoxyCompactList}\small\item\em Le pseudo. \end{DoxyCompactList}\item 
+\hypertarget{group__serveur_ga34dfc3a88b9ef77937198ba611f28f69}{}int \hyperlink{group__serveur_ga34dfc3a88b9ef77937198ba611f28f69}{size\+Msg}\label{group__serveur_ga34dfc3a88b9ef77937198ba611f28f69}
+
+\begin{DoxyCompactList}\small\item\em La taille du message. \end{DoxyCompactList}\item 
+\hypertarget{group__serveur_ga32d2f5216cddb59c7cc8fb2806a7e727}{}char $\ast$ \hyperlink{group__serveur_ga32d2f5216cddb59c7cc8fb2806a7e727}{msg}\label{group__serveur_ga32d2f5216cddb59c7cc8fb2806a7e727}
+
+\begin{DoxyCompactList}\small\item\em le message. \end{DoxyCompactList}\item 
+\hypertarget{group__serveur_ga964367e88bef9373b246eb37bb9c62de}{}char \hyperlink{group__serveur_ga964367e88bef9373b246eb37bb9c62de}{time} \mbox{[}256\mbox{]}\label{group__serveur_ga964367e88bef9373b246eb37bb9c62de}
+
+\begin{DoxyCompactList}\small\item\em Le temps pour les log. \end{DoxyCompactList}\item 
+\hypertarget{group__serveur_gad033d05e078fa433531dcadea106749f}{}F\+I\+L\+E $\ast$ \hyperlink{group__serveur_gad033d05e078fa433531dcadea106749f}{log}\label{group__serveur_gad033d05e078fa433531dcadea106749f}
+
+\begin{DoxyCompactList}\small\item\em le fichier de log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Les fonctions principals du serveur. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__serveur_ga92620a415736d7b5c4c6bae486e95b61}{}\index{Serveur@{Serveur}!add\+Log@{add\+Log}}
+\index{add\+Log@{add\+Log}!Serveur@{Serveur}}
+\subsubsection[{add\+Log(buffer\+To\+Receive $\ast$report, const char $\ast$msg, const char $\ast$prefixe)}]{\setlength{\rightskip}{0pt plus 5cm}void add\+Log (
+\begin{DoxyParamCaption}
+\item[{{\bf buffer\+To\+Receive} $\ast$}]{report, }
+\item[{const char $\ast$}]{msg, }
+\item[{const char $\ast$}]{prefixe}
+\end{DoxyParamCaption}
+)}\label{group__serveur_ga92620a415736d7b5c4c6bae486e95b61}
+
+
+Permet d\textquotesingle{}ajouter un entrée dans le fichier de log de la sessions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em report} & La structure qui contient le fd du fichier de log. \\
+\hline
+{\em msg} & le message à mettre dans le fichier de log. \\
+\hline
+{\em prefixe} & Le préfixe à mettre avant le message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__serveur_gae724501fae5a588a1b1c6b44156bd67c}{}\index{Serveur@{Serveur}!new\+Communication@{new\+Communication}}
+\index{new\+Communication@{new\+Communication}!Serveur@{Serveur}}
+\subsubsection[{new\+Communication(int s\+Client)}]{\setlength{\rightskip}{0pt plus 5cm}int new\+Communication (
+\begin{DoxyParamCaption}
+\item[{int}]{s\+Client}
+\end{DoxyParamCaption}
+)}\label{group__serveur_gae724501fae5a588a1b1c6b44156bd67c}
+
+
+Initialise une nouvelle communication entre le client et le serveur. 
+
+\begin{DoxyNote}{Note}
+On procéde a un fork pour permettre au serveur de continuer à attendre des communications. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em s\+Client} & La sockets du client. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{group__serveur_ga9588f65b1e3c085c64a2b7d911a6f9b0}{}\index{Serveur@{Serveur}!new\+Report@{new\+Report}}
+\index{new\+Report@{new\+Report}!Serveur@{Serveur}}
+\subsubsection[{new\+Report(int s\+Client, buffer\+To\+Receive $\ast$report)}]{\setlength{\rightskip}{0pt plus 5cm}void new\+Report (
+\begin{DoxyParamCaption}
+\item[{int}]{s\+Client, }
+\item[{{\bf buffer\+To\+Receive} $\ast$}]{report}
+\end{DoxyParamCaption}
+)}\label{group__serveur_ga9588f65b1e3c085c64a2b7d911a6f9b0}
+
+
+récupère et enregistre le rapport qu\textquotesingle{}a envoyé le client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s\+Client} & La socket du client. \\
+\hline
+{\em report} & Le rapport du client. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__serveur_gab6e538890028e2f672b9462c9e5b173b}{}\index{Serveur@{Serveur}!new\+Send\+Report@{new\+Send\+Report}}
+\index{new\+Send\+Report@{new\+Send\+Report}!Serveur@{Serveur}}
+\subsubsection[{new\+Send\+Report(int s\+Client, buffer\+To\+Receive $\ast$report)}]{\setlength{\rightskip}{0pt plus 5cm}void new\+Send\+Report (
+\begin{DoxyParamCaption}
+\item[{int}]{s\+Client, }
+\item[{{\bf buffer\+To\+Receive} $\ast$}]{report}
+\end{DoxyParamCaption}
+)}\label{group__serveur_gab6e538890028e2f672b9462c9e5b173b}
+
+
+envoie tout les rapports du clients dans un seul fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s\+Client} & La socket du client. \\
+\hline
+{\em report} & Le rapport du client. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__serveur_ga804db011cd3bba22e33e922af9a52c55}{}\index{Serveur@{Serveur}!recup\+Information@{recup\+Information}}
+\index{recup\+Information@{recup\+Information}!Serveur@{Serveur}}
+\subsubsection[{recup\+Information(int s\+Client, buffer\+To\+Receive $\ast$report)}]{\setlength{\rightskip}{0pt plus 5cm}void recup\+Information (
+\begin{DoxyParamCaption}
+\item[{int}]{s\+Client, }
+\item[{{\bf buffer\+To\+Receive} $\ast$}]{report}
+\end{DoxyParamCaption}
+)}\label{group__serveur_ga804db011cd3bba22e33e922af9a52c55}
+
+
+récupère les informations qui sont forcément envoyer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s\+Client} & La socket du client. \\
+\hline
+{\em report} & La structure à remplir. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__serveur_ga909ce3a76ccb623a444a43891e4445da}{}\index{Serveur@{Serveur}!recup\+Order@{recup\+Order}}
+\index{recup\+Order@{recup\+Order}!Serveur@{Serveur}}
+\subsubsection[{recup\+Order(const int s\+Client, char $\ast$buff)}]{\setlength{\rightskip}{0pt plus 5cm}void recup\+Order (
+\begin{DoxyParamCaption}
+\item[{const int}]{s\+Client, }
+\item[{char $\ast$}]{buff}
+\end{DoxyParamCaption}
+)}\label{group__serveur_ga909ce3a76ccb623a444a43891e4445da}
+
+
+récupère l\textquotesingle{}order du client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s\+Client} & La socket du client. \\
+\hline
+{\em buff} & Le buffer qui contiendra l\textquotesingle{}order. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__serveur_gaad0cdd4017fa30e4b57becc25487a6d5}{}\index{Serveur@{Serveur}!recup\+Time@{recup\+Time}}
+\index{recup\+Time@{recup\+Time}!Serveur@{Serveur}}
+\subsubsection[{recup\+Time(char $\ast$new\+Date\+And\+Time, time\+\_\+t time)}]{\setlength{\rightskip}{0pt plus 5cm}void recup\+Time (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{new\+Date\+And\+Time, }
+\item[{time\+\_\+t}]{time}
+\end{DoxyParamCaption}
+)}\label{group__serveur_gaad0cdd4017fa30e4b57becc25487a6d5}
+
+
+Renvoie la date Local + l\textquotesingle{}heure local. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Date\+And\+Time} & La chaine de caractère où stocker la date. \\
+\hline
+{\em time} & La date réinitialiser. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__serveur_ga4f4149b5cd35f8764a337891365f51c0}{}\index{Serveur@{Serveur}!wait\+Connexion@{wait\+Connexion}}
+\index{wait\+Connexion@{wait\+Connexion}!Serveur@{Serveur}}
+\subsubsection[{wait\+Connexion(int s)}]{\setlength{\rightskip}{0pt plus 5cm}void wait\+Connexion (
+\begin{DoxyParamCaption}
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)}\label{group__serveur_ga4f4149b5cd35f8764a337891365f51c0}
+
+
+Permet de mettre le processus sur écoute et d\textquotesingle{}attendre une connexion entrante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & La socket qui est disponible sur un port. donnée. \\
+\hline
+\end{DoxyParams}

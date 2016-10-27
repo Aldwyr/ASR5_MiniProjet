@@ -10,11 +10,12 @@ void recupOrder(const int sClient, char *buff) {
 }
 
 void recupTime(char *newDateAndTime, time_t time) {
-    // Permet de récupérer l'heure local au format MM/JJ/AA et HH:MM:SS
+    // Permet de récupérer l'heure local au format HH:MM:SS
     strftime(newDateAndTime, sizeof(newDateAndTime), "%X", localtime(&time));
 }
 
 void addLog(bufferToReceive *report, const char *msg, const char *prefixe) {
+    memset(report->time, 0, sizeof(report->time));
     recupTime(report->time, time(NULL));
     fprintf(report->log, "[%s]:", report->time);
     fprintf(report->log, "%s%s\n", prefixe, msg);
@@ -98,7 +99,7 @@ void newReport(int sClient, bufferToReceive *report) {
         exit(EXIT_FAILURE);
     }
     time_t forRapport = time(NULL);
-    strftime(buffTime, sizeof(buffTime), "%d %B %Y à %X", localtime(&forRapport));
+    strftime(buffTime, sizeof(buffTime), "%d %B %Y a %X", localtime(&forRapport));
     fprintf(fd, "**** rapport du %s ****\n", buffTime);
     fprintf(fd, "****************************************\n\n");
 
@@ -126,13 +127,12 @@ void newSendReport(int sClient, bufferToReceive *report) {
     fd = fopen(pathToOpen, "r");
     if (fd == NULL) {
         addLog(report, "fichier inexistant", ERR_LOG);
-        EnvoieMessage(sClient, "err||\0");
+        EnvoieMessage(sClient, "%c", '\0');
         close(sClient);
         addLog(report, "fin de sessions.", END_LOG);
         return;
     } else {
         // Cela permet de sauter dans le client la verification du pseudo.
-        EnvoieMessage(sClient, "pseudo Trouvé.");
         while (readRet != EOF) {
             readRet = fgetc(fd);
             if (readRet != EOF)
@@ -185,7 +185,7 @@ int newCommunication(int sClient) {
         fprintf(report.log, "**** Log du %s ****\n", report.time);
         fprintf(report.log, "*****************************************\n");
 
-
+        timestamp = time(NULL);
         report.order = atoi(buff);
         addLog(&report, buff, ORDER_LOG);
         switch (report.order) {

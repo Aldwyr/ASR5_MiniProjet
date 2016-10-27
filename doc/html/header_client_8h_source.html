@@ -42,6 +42,7 @@
         <ul class="tablist">
             <li><a href="index.html"><span>Main&#160;Page</span></a></li>
             <li><a href="modules.html"><span>Modules</span></a></li>
+            <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
             <li class="current"><a href="files.html"><span>Files</span></a></li>
             <li>
                 <div id="MSearchBox" class="MSearchBoxInactive">
@@ -110,118 +111,245 @@
         <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define CLIENT_HEADERCLIENT_H</span>
         </div>
         <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-        <div class="line"><a name="l00027"></a><span class="lineno"><a class="line"
-                                                                       href="group__main.html#ga8ec19ec9491838d0c0d5ebca1e4a930c">   27</a></span>&#160;void
-            (* <a class="code" href="group__main.html#ga8ec19ec9491838d0c0d5ebca1e4a930c">menuChosen</a>())();
+        <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span>
         </div>
-        <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-        <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span
+        <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span>
+        </div>
+        <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+        <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../commun/socklib.h&quot;</span>
+        </div>
+        <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../commun/usualFct.h&quot;</span>
+        </div>
+        <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+        <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define SEND_RAPPORT &quot;001&quot;</span>
+        </div>
+        <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define MAKE_MRAPPORT &quot;002&quot;</span>
+        </div>
+        <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define STOP_SERVEUR &quot;003&quot;</span>
+        </div>
+        <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+        <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+        <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define HOST &quot;localhost&quot;</span>
+        </div>
+        <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define PORT &quot;8080&quot;</span>
+        </div>
+        <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define TAILLE_MSG 32768  // 2^15 octet pour écrire, c&#39;est pas mal, non ? :D</span>
+        </div>
+        <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+        <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structsbuffer_to_send.html">   43</a></span>&#160;<span
+                class="keyword">typedef</span> <span class="keyword">struct </span><a class="code"
+                                                                                      href="structsbuffer_to_send.html">sbufferToSend</a>
+            {
+        </div>
+        <div class="line"><a name="l00045"></a><span class="lineno"><a class="line"
+                                                                       href="group__client.html#ga907c3a6256dd10a071ee545d4249825a">   45</a></span>&#160;
+            <span class="keywordtype">char</span> <a class="code"
+                                                     href="group__client.html#ga907c3a6256dd10a071ee545d4249825a">order</a>[4];
+        </div>
+        <div class="line"><a name="l00047"></a><span class="lineno"><a class="line"
+                                                                       href="group__client.html#ga076b5d65b30fabbb37beeb44450a5698">   47</a></span>&#160;
+            <span class="keywordtype">char</span> <a class="code"
+                                                     href="group__client.html#ga076b5d65b30fabbb37beeb44450a5698">sizePseudo</a>[3];
+        </div>
+        <div class="line"><a name="l00049"></a><span class="lineno"><a class="line"
+                                                                       href="group__client.html#gae6cc99604162931ab8baf652f1a03682">   49</a></span>&#160;
+            <span class="keywordtype">char</span> <a class="code"
+                                                     href="group__client.html#gae6cc99604162931ab8baf652f1a03682">pseudo</a>[25];
+        </div>
+        <div class="line"><a name="l00051"></a><span class="lineno"><a class="line"
+                                                                       href="group__client.html#ga86a8c1c1cd8fa6d69fa7558e34f915cf">   51</a></span>&#160;
+            <span class="keywordtype">char</span> <a class="code"
+                                                     href="group__client.html#ga86a8c1c1cd8fa6d69fa7558e34f915cf">sizeMsg</a>[256];
+        </div>
+        <div class="line"><a name="l00053"></a><span class="lineno"><a class="line"
+                                                                       href="group__client.html#ga32d2f5216cddb59c7cc8fb2806a7e727">   53</a></span>&#160;
+            <span class="keywordtype">char</span> *<a class="code"
+                                                      href="group__client.html#ga32d2f5216cddb59c7cc8fb2806a7e727">msg</a>;
+        </div>
+        <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} <a class="code"
+                                                                                           href="structsbuffer_to_send.html">bufferToSend</a>;
+        </div>
+        <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+        <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+        <div class="line"><a name="l00062"></a><span class="lineno"><a class="line"
+                                                                       href="group__client.html#ga8edad37db460231c5b59967d7e5223a1">   62</a></span>&#160;void
+            (*<a class="code" href="group__client.html#ga8edad37db460231c5b59967d7e5223a1">menuChosen</a>())();
+        </div>
+        <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+        <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span
                 class="keywordtype">void</span> <a class="code"
-                                                   href="group__main.html#ga2a0e843767aeea4f433a28b9c54f573a">menu</a>();
+                                                   href="group__client.html#ga2a0e843767aeea4f433a28b9c54f573a">menu</a>();
         </div>
-        <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-        <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//TODO: définir le nombre de rapport à retourner.</span>
+        <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+        <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">//TODO: définir le nombre de rapport à retourner.</span>
         </div>
-        <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span><span
+        <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span><span
                 class="keywordtype">void</span> <a class="code"
-                                                   href="group__main.html#gacc28d96d3dde01fd0b1290d67ed5c521">receiveRapport</a>();
+                                                   href="group__client.html#gacc28d96d3dde01fd0b1290d67ed5c521">receiveRapport</a>();
         </div>
-        <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-        <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span
+        <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+        <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span
                 class="keywordtype">void</span> <a class="code"
-                                                   href="group__main.html#gaa404f7b3293c0f454e9afdd108c7b35e">newReport</a>();
+                                                   href="group__client.html#gaa404f7b3293c0f454e9afdd108c7b35e">newReport</a>();
         </div>
-        <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span
+        <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+        <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span
                 class="keywordtype">void</span> <a class="code"
-                                                   href="group__main.html#ga7d6a98e7522d16b636002acaed73e98e">sendReport</a>(<span
-                class="keywordtype">int</span> socketServeur, <span class="keywordtype">char</span> *report, <span
-                class="keywordtype">char</span> *pseudo);
+                                                   href="group__client.html#ga579c9c1d62bd4fe80e72dfc424e88251">sendReport</a>(<span
+                class="keywordtype">int</span> socketServeur, <a class="code" href="structsbuffer_to_send.html">bufferToSend</a>
+            *report);
         </div>
-        <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-        <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span
+        <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+        <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span
                 class="keywordtype">void</span> <a class="code"
-                                                   href="group__main.html#gac0e6b092ca870499ed8aa48295046527">kingdomOfFreedom</a>(<span
+                                                   href="group__client.html#gac0e6b092ca870499ed8aa48295046527">kingdomOfFreedom</a>(<span
                 class="keywordtype">void</span> **newFreeGuys);
         </div>
-        <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span
+        <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+        <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span
                 class="keywordtype">void</span> <a class="code"
-                                                   href="group__main.html#gaddc404e3b046aad347a092251d8ad25c">pseudoUser</a>(<span
+                                                   href="group__client.html#gaddc404e3b046aad347a092251d8ad25c">pseudoUser</a>(<span
                 class="keywordtype">char</span> pseudo[25]);
         </div>
-        <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-        <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span
+        <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+        <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span
                 class="keywordtype">void</span> <a class="code"
-                                                   href="group__main.html#ga21d1bed03ebb416b623232da3a709eaa">set_buffer_head</a>(<span
-                class="keywordtype">char</span> **completBuffer, <span class="keyword">const</span> <span
-                class="keywordtype">char</span> order, <span class="keyword">const</span> <span
-                class="keywordtype">char</span> pseudo[]);
+                                                   href="group__client.html#ga77b9bbe116a27d989907f5e1883ed4c0">set_buffer_struct</a>(<a
+                class="code" href="structsbuffer_to_send.html">bufferToSend</a> *report);
         </div>
-        <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-        <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span
+        <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+        <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span
                 class="keywordtype">void</span> <a class="code"
-                                                   href="group__main.html#ga52a26b6e09ccf335eb8dffb7909684b2">set_buffer_body</a>(<span
-                class="keywordtype">char</span> **completBuffer, <span class="keyword">const</span> <span
-                class="keywordtype">char</span> *msg);
+                                                   href="group__client.html#ga6fccf851c95d9610cf70360d8c0e30c6">sendReportToServeur</a>(<span
+                class="keyword">const</span> <span class="keywordtype">int</span> sServeur, <a class="code"
+                                                                                               href="structsbuffer_to_send.html">bufferToSend</a>
+            *report);
         </div>
-        <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif //CLIENT_HEADERCLIENT_H</span>
+        <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+        <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span
+                class="keywordtype">void</span> <a class="code"
+                                                   href="group__client.html#ga7de73413f4b6a3568d7e7891aa595424">stopServeur</a>();
         </div>
-        <div class="ttc" id="group__main_html_ga2a0e843767aeea4f433a28b9c54f573a">
-            <div class="ttname"><a href="group__main.html#ga2a0e843767aeea4f433a28b9c54f573a">menu</a></div>
+        <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+        <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span
+                class="keywordtype">void</span> <a class="code"
+                                                   href="group__client.html#ga79da17de173cd0d0da5d6e07e6e377f4">sendToServeur</a>(<span
+                class="keywordtype">int</span> sServeur, <span class="keywordtype">char</span> *msg, <span
+                class="keywordtype">int</span> sizeMsg);
+        </div>
+        <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+        <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif //CLIENT_HEADERCLIENT_H</span>
+        </div>
+        <div class="ttc" id="group__client_html_ga2a0e843767aeea4f433a28b9c54f573a">
+            <div class="ttname"><a href="group__client.html#ga2a0e843767aeea4f433a28b9c54f573a">menu</a></div>
             <div class="ttdeci">void menu()</div>
             <div class="ttdoc">affichie le menu des choix à l&#39;écran.</div>
-            <div class="ttdef"><b>Definition:</b> client.c:114</div>
+            <div class="ttdef"><b>Definition:</b> client.c:233</div>
         </div>
-        <div class="ttc" id="group__main_html_gaa404f7b3293c0f454e9afdd108c7b35e">
-            <div class="ttname"><a href="group__main.html#gaa404f7b3293c0f454e9afdd108c7b35e">newReport</a></div>
-            <div class="ttdeci">void newReport()</div>
-            <div class="ttdoc">Permet d&#39;écrire ou d&#39;envoyer un nouveau rapport.</div>
-            <div class="ttdef"><b>Definition:</b> client.c:59</div>
+        <div class="ttc" id="group__client_html_ga86a8c1c1cd8fa6d69fa7558e34f915cf">
+            <div class="ttname"><a
+                    href="group__client.html#ga86a8c1c1cd8fa6d69fa7558e34f915cf">sbufferToSend::sizeMsg</a></div>
+            <div class="ttdeci">char sizeMsg[256]</div>
+            <div class="ttdoc">La taille du message. Qui est limité à 10^256 caractère maxi.</div>
+            <div class="ttdef"><b>Definition:</b> headerClient.h:51</div>
         </div>
-        <div class="ttc" id="group__main_html_gaddc404e3b046aad347a092251d8ad25c">
-            <div class="ttname"><a href="group__main.html#gaddc404e3b046aad347a092251d8ad25c">pseudoUser</a></div>
+        <div class="ttc" id="group__client_html_gae6cc99604162931ab8baf652f1a03682">
+            <div class="ttname"><a
+                    href="group__client.html#gae6cc99604162931ab8baf652f1a03682">sbufferToSend::pseudo</a></div>
+            <div class="ttdeci">char pseudo[25]</div>
+            <div class="ttdoc">Le pseudo.</div>
+            <div class="ttdef"><b>Definition:</b> headerClient.h:49</div>
+        </div>
+        <div class="ttc" id="group__client_html_ga77b9bbe116a27d989907f5e1883ed4c0">
+            <div class="ttname"><a href="group__client.html#ga77b9bbe116a27d989907f5e1883ed4c0">set_buffer_struct</a>
+            </div>
+            <div class="ttdeci">void set_buffer_struct(bufferToSend *report)</div>
+            <div class="ttdoc">Complète la structure du rapport. C&#39;est-à-dire la taille du pseudo et la taile du
+                message...
+            </div>
+            <div class="ttdef"><b>Definition:</b> client.c:27</div>
+        </div>
+        <div class="ttc" id="group__client_html_ga79da17de173cd0d0da5d6e07e6e377f4">
+            <div class="ttname"><a href="group__client.html#ga79da17de173cd0d0da5d6e07e6e377f4">sendToServeur</a></div>
+            <div class="ttdeci">void sendToServeur(int sServeur, char *msg, int sizeMsg)</div>
+            <div class="ttdoc">envoie quelque chose sur la socket donnée</div>
+            <div class="ttdef"><b>Definition:</b> client.c:18</div>
+        </div>
+        <div class="ttc" id="group__client_html_ga076b5d65b30fabbb37beeb44450a5698">
+            <div class="ttname"><a href="group__client.html#ga076b5d65b30fabbb37beeb44450a5698">sbufferToSend::sizePseudo</a>
+            </div>
+            <div class="ttdeci">char sizePseudo[3]</div>
+            <div class="ttdoc">La taille du pseudo.</div>
+            <div class="ttdef"><b>Definition:</b> headerClient.h:47</div>
+        </div>
+        <div class="ttc" id="group__client_html_gaddc404e3b046aad347a092251d8ad25c">
+            <div class="ttname"><a href="group__client.html#gaddc404e3b046aad347a092251d8ad25c">pseudoUser</a></div>
             <div class="ttdeci">void pseudoUser(char pseudo[25])</div>
             <div class="ttdoc">Permet de récupérer le pseudo de l&#39;utilisateur sur l&#39;entrée standard.</div>
-            <div class="ttdef"><b>Definition:</b> client.c:16</div>
+            <div class="ttdef"><b>Definition:</b> client.c:4</div>
         </div>
-        <div class="ttc" id="group__main_html_gac0e6b092ca870499ed8aa48295046527">
-            <div class="ttname"><a href="group__main.html#gac0e6b092ca870499ed8aa48295046527">kingdomOfFreedom</a></div>
+        <div class="ttc" id="group__client_html_ga8edad37db460231c5b59967d7e5223a1">
+            <div class="ttname"><a href="group__client.html#ga8edad37db460231c5b59967d7e5223a1">menuChosen</a></div>
+            <div class="ttdeci">void(*)() menuChosen()</div>
+            <div class="ttdoc">La fonction permet de selection une fonction selon le choix du client.</div>
+            <div class="ttdef"><b>Definition:</b> headerClient.h:62</div>
+        </div>
+        <div class="ttc" id="group__client_html_gaa404f7b3293c0f454e9afdd108c7b35e">
+            <div class="ttname"><a href="group__client.html#gaa404f7b3293c0f454e9afdd108c7b35e">newReport</a></div>
+            <div class="ttdeci">void newReport()</div>
+            <div class="ttdoc">Permet d&#39;écrire ou d&#39;envoyer un nouveau rapport.</div>
+            <div class="ttdef"><b>Definition:</b> client.c:89</div>
+        </div>
+        <div class="ttc" id="group__client_html_gacc28d96d3dde01fd0b1290d67ed5c521">
+            <div class="ttname"><a href="group__client.html#gacc28d96d3dde01fd0b1290d67ed5c521">receiveRapport</a></div>
+            <div class="ttdeci">void receiveRapport()</div>
+            <div class="ttdoc">permet de recevoir le rapport mensuelle.</div>
+            <div class="ttdef"><b>Definition:</b> client.c:164</div>
+        </div>
+        <div class="ttc" id="group__client_html_ga6fccf851c95d9610cf70360d8c0e30c6">
+            <div class="ttname"><a href="group__client.html#ga6fccf851c95d9610cf70360d8c0e30c6">sendReportToServeur</a>
+            </div>
+            <div class="ttdeci">void sendReportToServeur(const int sServeur, bufferToSend *report)</div>
+            <div class="ttdoc">Envoie l&#39;ordre au client.</div>
+            <div class="ttdef"><b>Definition:</b> client.c:47</div>
+        </div>
+        <div class="ttc" id="structsbuffer_to_send_html">
+            <div class="ttname"><a href="structsbuffer_to_send.html">sbufferToSend</a></div>
+            <div class="ttdef"><b>Definition:</b> headerClient.h:43</div>
+        </div>
+        <div class="ttc" id="group__client_html_ga579c9c1d62bd4fe80e72dfc424e88251">
+            <div class="ttname"><a href="group__client.html#ga579c9c1d62bd4fe80e72dfc424e88251">sendReport</a></div>
+            <div class="ttdeci">void sendReport(int socketServeur, bufferToSend *report)</div>
+            <div class="ttdoc">envoie le rapport au seveur.</div>
+            <div class="ttdef"><b>Definition:</b> client.c:68</div>
+        </div>
+        <div class="ttc" id="group__client_html_gac0e6b092ca870499ed8aa48295046527">
+            <div class="ttname"><a href="group__client.html#gac0e6b092ca870499ed8aa48295046527">kingdomOfFreedom</a>
+            </div>
             <div class="ttdeci">void kingdomOfFreedom(void **newFreeGuys)</div>
             <div class="ttdoc">parce que tout le monde aspire à la liberté, même des octets veulent pouvoir bénéficier
                 de cela...
             </div>
-            <div class="ttdef"><b>Definition:</b> client.c:21</div>
         </div>
-        <div class="ttc" id="group__main_html_ga7d6a98e7522d16b636002acaed73e98e">
-            <div class="ttname"><a href="group__main.html#ga7d6a98e7522d16b636002acaed73e98e">sendReport</a></div>
-            <div class="ttdeci">void sendReport(int socketServeur, char *report, char *pseudo)</div>
-            <div class="ttdoc">envoie le rapport au seveur.</div>
-            <div class="ttdef"><b>Definition:</b> client.c:45</div>
+        <div class="ttc" id="group__client_html_ga7de73413f4b6a3568d7e7891aa595424">
+            <div class="ttname"><a href="group__client.html#ga7de73413f4b6a3568d7e7891aa595424">stopServeur</a></div>
+            <div class="ttdeci">void stopServeur()</div>
+            <div class="ttdoc">Arrête le serveur distant.</div>
+            <div class="ttdef"><b>Definition:</b> client.c:153</div>
         </div>
-        <div class="ttc" id="group__main_html_ga8ec19ec9491838d0c0d5ebca1e4a930c">
-            <div class="ttname"><a href="group__main.html#ga8ec19ec9491838d0c0d5ebca1e4a930c">menuChosen</a></div>
-            <div class="ttdeci">void(*)() menuChosen()</div>
-            <div class="ttdoc">La fonction permet de selection une fonction selon le choix du client.</div>
-            <div class="ttdef"><b>Definition:</b> headerClient.h:27</div>
-        </div>
-        <div class="ttc" id="group__main_html_ga52a26b6e09ccf335eb8dffb7909684b2">
-            <div class="ttname"><a href="group__main.html#ga52a26b6e09ccf335eb8dffb7909684b2">set_buffer_body</a></div>
-            <div class="ttdeci">void set_buffer_body(char **completBuffer, const char *msg)</div>
-            <div class="ttdoc">Ajoute la taille du message et le corps du rapport au buffer.</div>
-            <div class="ttdef"><b>Definition:</b> client.c:38</div>
-        </div>
-        <div class="ttc" id="group__main_html_ga21d1bed03ebb416b623232da3a709eaa">
-            <div class="ttname"><a href="group__main.html#ga21d1bed03ebb416b623232da3a709eaa">set_buffer_head</a></div>
-            <div class="ttdeci">void set_buffer_head(char **completBuffer, const char order, const char pseudo[])</div>
-            <div class="ttdoc">Initialise la tête du buffer à envoyer au server avec, dans l&#39;order : le Buffer, la
-                taille du pseudo...
+        <div class="ttc" id="group__client_html_ga32d2f5216cddb59c7cc8fb2806a7e727">
+            <div class="ttname"><a href="group__client.html#ga32d2f5216cddb59c7cc8fb2806a7e727">sbufferToSend::msg</a>
             </div>
-            <div class="ttdef"><b>Definition:</b> client.c:26</div>
+            <div class="ttdeci">char * msg</div>
+            <div class="ttdoc">le message.</div>
+            <div class="ttdef"><b>Definition:</b> headerClient.h:53</div>
         </div>
-        <div class="ttc" id="group__main_html_gacc28d96d3dde01fd0b1290d67ed5c521">
-            <div class="ttname"><a href="group__main.html#gacc28d96d3dde01fd0b1290d67ed5c521">receiveRapport</a></div>
-            <div class="ttdeci">void receiveRapport()</div>
-            <div class="ttdoc">permet de recevoir le rapport mensuelle.</div>
-            <div class="ttdef"><b>Definition:</b> client.c:110</div>
+        <div class="ttc" id="group__client_html_ga907c3a6256dd10a071ee545d4249825a">
+            <div class="ttname"><a href="group__client.html#ga907c3a6256dd10a071ee545d4249825a">sbufferToSend::order</a>
+            </div>
+            <div class="ttdeci">char order[4]</div>
+            <div class="ttdoc">l&#39;ordre qui est envoyé.</div>
+            <div class="ttdef"><b>Definition:</b> headerClient.h:45</div>
         </div>
     </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -164,6 +164,7 @@ void stopServeur() {
 void receiveRapport(){
     int socketServeur = 0;
     int readRet = 0;
+    int nbRead = 0;
     char *host = HOST;
     char *port = PORT;
     char pseudo[25];
@@ -190,11 +191,7 @@ void receiveRapport(){
     sendToServeur(socketServeur, pseudo, strlen(pseudo));
     printf("En attente du rapport...\n");
 
-
     // On verifie si le pseudo existe.
-    if (strcmp(RecoieLigne(socketServeur), "err||") == 0) {
-        printf("Le pseudo demandé n'existe pas.\nRecommencé.\n");
-    } else {
         strcat(pathToOpen, pseudo);
         strcat(pathToOpen, ".txt");
         // On supprime le fichier s'il existe. l'option "r" de fopen ne crée pas le fichier s'il n'existe pas, c'est comme cela que l'on vérifier l'existance du fichier.
@@ -212,21 +209,34 @@ void receiveRapport(){
                 close(socketServeur);
                 return;
             }
-            fprintf(fd, "%c", buff[0]);
+            if (buff[0] != '\0') {
+                fprintf(fd, "%c", buff[0]);
+                nbRead++;
+            } else {
+                if (nbRead == 0) {
+                    printf("Pseudo non répertorié.\nRecommencé.\n");
+                    fclose(fd);
+                    remove(pathToOpen);
+                    close(socketServeur);
+                    return;
+                }
+            }
         }
-        fprintf(fd, "\n***************************************\n**** Fin Rapport ****");
-        fclose(fd);
-    }
+    fprintf(fd, "\n***************************************\n**** Fin Rapport ****");
+    fclose(fd);
     close(socketServeur);
+}
+
+void logDemand() {
+
 }
 
 void menu(){
     printf("merci de choisir ce que vous voulez faire :\n");
     printf("1 - Envoie d'un rapport.\n");
     printf("2 - Création d'un rapport.\n");
-    printf("3 - demande des log.\n");
-    printf("4 - arrêter le serveur.\n");
-    printf("5 - sortir.\n");
+    printf("3 - arrêter le serveur.\n");
+    printf("4 - sortir.\n");
 }
 
 void (* menuChosen())(){
@@ -243,10 +253,10 @@ void (* menuChosen())(){
             case 2:
                 return receiveRapport;
                 break;
-            case 4:
+            case 3:
                 return stopServeur;
                 break;
-            case 5:
+            case 4:
                 printf("fermuture du programme.\nMerci est bonne journée.\n");
                 exit(1);
                 break;
