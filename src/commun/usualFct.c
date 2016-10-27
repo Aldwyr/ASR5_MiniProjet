@@ -46,3 +46,7 @@ void fctErrorPersonal(int value) {
         exit(EXIT_FAILURE);
     }
 }
+
+void convertIntToChar(char *tab, const size_t intergerToConvert, const int placeInTab) {
+    sprintf(tab, "%d", (int) intergerToConvert);
+}

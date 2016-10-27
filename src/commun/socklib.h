@@ -61,9 +61,9 @@ int AcceptConnexion(int s);
 int RecoieEtSauveDonnees(int fd, int sock);
 
 /**
- * Lire les donn�es sur une socket (uniquement j'utilise recv) jusqu'� arriv� � un retour chariot '\n' la donn�e est stok�e dans un tableau dont la taille est adapt� pour cela).
+ * Lire les données sur une socket (uniquement j'utilise recv) jusqu'à arriver à un retour chariot '\n' la donnée est stokée dans un tableau dont la taille est adapté pour cela).
  * @param sock : la socket de lecture
- * @return la chaine lue � lib�rer par free
+ * @return la chaine lue à libérer par free
  */
 char *RecoieLigne(int sock);
 

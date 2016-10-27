@@ -54,6 +54,13 @@ int readChar(char *c);
 
 /// vide le buffer de la sortie standard.
 void viderBuffer();
+
+/**
+ * @brief Convertie un entier int en char *
+ * @param tab le tableau ou sera stocker le char*
+ * @param intergerToConvert L'entier à convertir.
+ */
+void convertIntToChar(char *tab, const size_t intergerToConvert);
 /** }@*/
 
 #endif //CLIENT_USUALFCT_H
